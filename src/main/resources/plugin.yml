@@ -1,0 +1,7 @@
+name: AntiBot-Ultra
+version: 1.3.6
+main: aname.dbmgaming.com.AntiBotUltra
+description: nothing yet
+commands:
+  antibot-ultra:
+    description: Main command ! See /antibot-ultra help for details!

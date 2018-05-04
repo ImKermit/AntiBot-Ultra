@@ -1,0 +1,60 @@
+protections:
+  bot-protection:
+    enabled: true
+    advanced:
+      duration: 120
+      interval: 2
+      max-logins: 5
+      play-time: 2
+  stopforumspam:
+    proxy-check: true
+    asn:
+      enabled: false
+      blacklist:
+        - 13335
+        - 16276
+        - 44066
+        - 20473
+    country:
+      enabled: false
+      blacklist: []
+  botscout:
+    proxy-check: true
+  dnsbl:
+    enabled: true
+    blacklist:
+      - dnsbl.dronebl.org
+      - dnsbl.spfbl.net
+    timeout: 4000
+    retries: 1
+  alternative:
+    enabled: true
+    with-href:
+      - http://www.vipsocks24.net/
+      - http://www.sslproxies24.top/
+      - http://www.socksproxylist24.top/
+    without-href:
+      - http://spys.me/proxy.txt
+  local-blacklist: true
+mysql:
+  type: yaml
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: secret
+  arguments: ?autoreconnect=true
+messages:
+  bot-protection:
+    activated: '[AntiBot-Ultra] %player% bot protection has triggered due to tremendous player log-ins !'
+    deactivated: '[AntiBot-Ultra] %player% bot protection has stopped !'
+    kick: '[AntiBot-Ultra]\nKicked!\nReason: Bot protection is active due to tremendous player log-ins!\nIn order to log-in please contact an admin to add you to the whitelist !'
+    whitelist: '[AntiBot-Ultra] %player% has been added to the whitelist !'
+    unwhitelist: '[AntiBot-Ultra] %player% has been removed from the whitelist !'
+  alternative-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your IP (%ip%) was found on public proxy records !'
+  dnsbl-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your IP (%ip%) was found on dnsbl records !'
+  stopforumspam:
+    asn-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your ASN (%asn%) was found to be from a blocked provider !'
+    country-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your country (%country%) is not allowed on example.com !'
+    proxy-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your IP (%ip%) was found on stopforumspam records !'
+  botscout-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your IP (%ip%) was found on botscout.com records !'
+  local-blacklist-kick: '[AntiBot-Ultra]\nKicked!\nReason: Your IP (%ip%) is on local blacklist !'
